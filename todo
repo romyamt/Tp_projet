@@ -1,30 +1,43 @@
 ARCHITECTURE DU SITE :
+
 Page accueil avec
 un pokémon aléatoire et fiche réduite.
 accès liste des pokémon par génération
 accès liste des pokémon par type
 Moteur de recherche pokémon
+
+
 Page liste des pokémon par génération
 Liste des génération
 au clic sur génération => afficher liste des pokémon filtré
 au clic sur pokémon =< afficher fiche détaillé d’un pokémon
+
+
 Page liste des pokémon par type
 Liste des types de pokémon
 au clic sur un type=> afficher liste des pokémon de ce type
 au clic sur pokémon =< afficher fiche détaillé d’un pokémon
+
+
 Moteur de recherche :
 afficher un champs texte et un bouton GO
 Afficher plusieurs champ de recherche possible (nom, numéro, …)
 au clic, lancer un recherche sur les pokémons selon le filtre sélectionné et afficher la liste de
 résultat.
+
+
 Fiche réduite pokémon :
 nom
 numéro
 type
 image
+
+
 Fiche détaillé pokémon :
 nom
 type
 génération
+
+
 évolution précédente : nom+ image : lien vers ce pokémon
 évolution suivante : nom+ image : lien vers ce pokémon
