@@ -1,1 +1,37 @@
-/*# sourceMappingURL=style.css.map */
+header {
+  display: flex;
+  align-items: right;
+  background-color: #cc4c41;
+  padding: 30px;
+  text-align: right;
+}
+header a {
+  color: #fff;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.navbar {
+  justify-content: flex-end;
+  margin-right: auto;
+}
+
+.searchNav {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+
+#search {
+  padding: 8px;
+  border: 1px solid #ccc;
+  margin-right: 8px;
+}
+
+.btn {
+  padding: 8px 16px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */
