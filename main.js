@@ -4,6 +4,7 @@
 
  ////////////// Page des pokemons par génération ///////////////
 //Fonction qui affiche les pokemons par génération.
+//et test1 = fetch('https://tyradex.vercel.app/api/v1/gen/9').map(e=>e*2);
 
 
 //Fonction qui affiche les pokemons 
@@ -41,7 +42,7 @@ async function showPokemonDetail(pokedexId) {
     //construire le contenue - le template 
     let contenu = `
     <button onclick="goList()"> Revenir à la liste </button>
-        <article class="userDetail">
+        <article class="PokemonDetail">
         <h2> `+ pokemon.name.fr + ` </h2>
         </article> 
         `;
