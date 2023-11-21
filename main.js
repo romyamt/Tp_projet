@@ -11,13 +11,15 @@ function showPokemonGen(list) {
 }
 
 function showPokemon(pokemon) {
+    console.log(pokemon.name)
+    console.log(pokemon.pokedexId)
 
     //récupérer la cible
-    let cible = document.getElementById("listUsers");
+    let cible = document.getElementById("ListPokemonG");
     //construire le contenue
     let contenue = `
-    <article class="ListPokemonG" onclick="showPokemoDetail( `+ pokemon.id + ` )">
-    `+ pokemon.name + `
+    <article class="ElPokemon" onclick="showPostDetail ( `+ pokemon.pokedexId + ` )">
+    `+ pokemon.name.fr + `
     </article> `;
 
     //ajouter le contenue dans la cible
