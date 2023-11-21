@@ -3,7 +3,10 @@
 
 
  ////////////// Page des pokemons par génération ///////////////
-//Fonction qui affiche les pokemons par génération
+//Fonction qui affiche les pokemons par génération.
+
+
+//Fonction qui affiche les pokemons 
 function showPokemonGen(list) {
     list.forEach(element => {
         showPokemon(element);
