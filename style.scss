@@ -4,11 +4,16 @@
 
 header {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: row;
+    justify-content:space-between;
     align-items: right;
     background-color: #cc4c41;
     padding: 50px;
     text-align: right;
+
+    img {
+        width: 6%;
+    }
 a {
     color: #fff;
     margin-left: 30px; 
