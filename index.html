@@ -8,7 +8,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src='main.js'></script>
+    <script src='accueil.js'></script>
 </head>
 
 <body>
@@ -21,16 +21,27 @@
                 <a class="menu" href="generation.html">Génération</a>
                 <a class="menu" href="type.html">Type de Pokémon</a>
             </ul>
-            <div class="searchNav">
-                <input type="text" name="rechercher" id="search" />
-                <button class="btn btn-sm">Rechercher</button>
-            </div>
+
         </nav>
     </header>
+
     <article>
         <h2> Voici notre mini pokédex ! J'espère que votre parcours va bien se dérouler. </h2>
         <br><br>
         <h4> Bon visionnage !</h4>
+        <h2> Pokemon aléatoire </h2>
+        <section id="randomPoke"> </section>
+<!-- Bouton aléatoire qui utilise la fonction ? -->
+        <div class="searchNav">
+            <input type="text" name="rechercher" id="search" />
+            <button class="btn btn-sm">Rechercher</button>
+        </div>
+        <main>
+            <h2> Liste de pokemon </h2>
+            <section id="ListPokemonG"></section>
+            <section id="PokemonDetail"></section>
+
+        </main>
     </article>
 
     <footer>
