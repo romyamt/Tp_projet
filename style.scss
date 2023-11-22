@@ -1,25 +1,33 @@
+.html {
+    background-color: #333;
+}
+
 header {
     display: flex;
+    justify-content: flex-end;
     align-items: right;
     background-color: #cc4c41;
-    padding: 30px;
+    padding: 50px;
     text-align: right;
 a {
     color: #fff;
-    margin-left: 20px; 
+    margin-left: 30px; 
     text-decoration: none;  
 }
 }
 .navbar {
     justify-content: flex-end;
     margin-right: auto;
+    align-items: baseline;
 }
 
 
 .searchNav {
     display: flex;
-    align-items: center;
-    margin-right: auto;
+    align-items: right;
+    margin-right: 10px;
+    justify-content: flex-end;
+
 }
 
 #search {
@@ -34,4 +42,20 @@ a {
     color: #fff;
     border: none;
     cursor: pointer;
+}
+
+.ListPokemonG{
+    margin: 20px;
+    list-style: none;
+    display: block;
+    width:40%;
+    min-height: 40px;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    background-color: #333;
+    overflow: hidden;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: bottom;
+    color: #fff;
 }
