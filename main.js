@@ -10,12 +10,12 @@
 //Fonction qui affiche les pokemons 
 function showPokemonGen(list) {
     list.forEach(element => {
-        showPokemon(element);
+        showPokemonFiltre(element);
     });
 }
 
 //Affiche tout les pokémons
-function showPokemon(pokemon) {
+function showPokemonFiltre(pokemon) {
     //console.log(pokemon.name)
     //console.log(pokemon.pokedexId)
 
