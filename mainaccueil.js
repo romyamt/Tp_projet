@@ -1,15 +1,20 @@
+////////////// Page d'accueil /////////////// 
+//Créer une fontion qui affiche des pokémons de manière aléatoire
+
+
  ////////////// Page des pokemons par génération ///////////////
 //Fonction qui affiche les pokemons par génération.
 
+
 //Fonction qui affiche les pokemons 
-function showPokemonGen(list) {
+function showPokemon(list) {
     list.forEach(element => {
-        showPokemonFiltre(element);
+        showListPokemon(element);
     });
 }
 
 //Affiche tout les pokémons
-function showPokemonFiltre(pokemon) {
+function showListPokemon(pokemon) {
     //console.log(pokemon.name)
     //console.log(pokemon.pokedexId)
 
@@ -54,7 +59,7 @@ function goList(){
 // récupérer les données du serveur 
 fetch('https://tyradex.vercel.app/api/v1/pokemon')
     .then(response => response.json())
-    .then(element => showPokemonGen(element));
+    .then(element => showPokemon(element));
 
 
 ////////////// Page des pokemons par type /////////////// 
