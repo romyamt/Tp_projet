@@ -1,9 +1,8 @@
 ////////////// Page d'accueil /////////////// 
 //Créer une fontion qui affiche des pokémons de manière aléatoire
-
-
- ////////////// Page des pokemons par génération ///////////////
-//Fonction qui affiche les pokemons par génération.
+const pokemonArray = ['https://tyradex.vercel.app/api/v1/gen/1']
+    let generation_1 = pokemonArray.filter((pokemon)=> pokemon.generation =='1' )
+    console.log(generation_1)
 
 
 //Fonction qui affiche les pokemons 
