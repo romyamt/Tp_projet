@@ -61,4 +61,31 @@ header a {
   padding-right: 15px;
   text-align: bottom;
   color: #fff;
+}
+
+.carte {
+  border-radius: 53px;
+  background: #e0e0e0;
+  box-shadow: 27px 27px 55px #333, -27px -27px 55px #ffffff;
+  width: 100%;
+  padding: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#PokemonDetail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#PokemonDetail .images {
+  width: 20%;
 }/*# sourceMappingURL=style.css.map */

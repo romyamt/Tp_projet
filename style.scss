@@ -5,7 +5,7 @@
 header {
     display: flex;
     flex-direction: row;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: right;
     background-color: #cc4c41;
     padding: 50px;
@@ -14,12 +14,14 @@ header {
     img {
         width: 6%;
     }
-a {
-    color: #fff;
-    margin-left: 30px; 
-    text-decoration: none;  
+
+    a {
+        color: #fff;
+        margin-left: 30px;
+        text-decoration: none;
+    }
 }
-}
+
 .navbar {
     justify-content: flex-end;
     margin-right: auto;
@@ -49,11 +51,11 @@ a {
     cursor: pointer;
 }
 
-.ListPokemonG{
+.ListPokemonG {
     margin: 20px;
     list-style: none;
     display: block;
-    width:40%;
+    width: 40%;
     min-height: 40px;
     border: 1px solid #ffffff;
     border-radius: 4px;
@@ -63,4 +65,32 @@ a {
     padding-right: 15px;
     text-align: bottom;
     color: #fff;
+}
+
+.carte {
+    border-radius: 53px;
+    background: #e0e0e0;
+    box-shadow: 27px 27px 55px #333,
+        -27px -27px 55px #ffffff;
+        width: 100%;
+        padding: 5%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#PokemonDetail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .images {
+        width: 20%;
+    }
 }
