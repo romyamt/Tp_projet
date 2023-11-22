@@ -6,27 +6,30 @@ const pokemonArray = ['https://tyradex.vercel.app/api/v1/gen/1']
 
 
 //Fonction qui affiche les pokemons 
-function showPokemon(list) {
+function showPokemonGen(list) {
     list.forEach(element => {
-        showListPokemon(element);
+        showPokemonFiltre(element);
     });
 }
 
 //Affiche tout les pokémons
-function showListPokemon(pokemon) {
-    //console.log(pokemon.name)
-    //console.log(pokemon.pokedexId)
+function showPokemonFiltre(pokemon) {
+    if (pokemon.pokedexId > 0) {
 
-    //récupérer la cible
-    let cible = document.getElementById("ListPokemonG");
-    //construire le contenue
-    let contenue = `
+        //console.log(pokemon.name)
+        //console.log(pokemon.pokedexId)
+
+        //récupérer la cible
+        let cible = document.getElementById("ListPokemonG");
+        //construire le contenue
+        let contenue = `
     <article class="ListPokemonG" onclick="showPokemonDetail ( `+ pokemon.pokedexId + ` )">
     `+ pokemon.name.fr + `
     </article> `;
 
-    //ajouter le contenue dans la cible
-    cible.innerHTML += contenue;
+        //ajouter le contenue dans la cible
+        cible.innerHTML += contenue;
+    }
 }
 
 //filtrer les générations 
@@ -40,7 +43,8 @@ async function showPokemonDetail(pokedexId) {
     //construire le contenue - le template 
     let contenu = `
     <button onclick="goList()"> Revenir à la liste </button>
-        <article class="PokemonDetail">
+        <article class="PokemonDetail carte">
+        <img class='images' src='`+pokemon.sprites.regular+`'>
         <h2> `+ pokemon.name.fr + ` </h2>
         </article> 
         `;
@@ -49,7 +53,7 @@ async function showPokemonDetail(pokedexId) {
     $("#ListPokemonG").hide();
     $("#PokemonDetail").show();
 }
-function goList(){
+function goList() {
     $("#PokemonDetail").hide();
     $("#ListPokemonG").show();
 }
@@ -58,7 +62,7 @@ function goList(){
 // récupérer les données du serveur 
 fetch('https://tyradex.vercel.app/api/v1/pokemon')
     .then(response => response.json())
-    .then(element => showPokemon(element));
+    .then(element => showPokemonGen(element));
 
 
 ////////////// Page des pokemons par type /////////////// 
