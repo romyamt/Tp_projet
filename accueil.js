@@ -1,8 +1,41 @@
 ////////////// Page d'accueil /////////////// 
+
+//rechercher les pokemons par nom
+const pokemons = [] ;
+
+fetch ('https://tyradex.vercel.app/api/v1/pokemon')
+.then(response => response.json())
+.then (element => pokemons.push(...element))
+
+function trouverPokemon(recherche, pokemons) {
+    return pokemons.filter(pokemon => {
+        const regex =new RegExp (recherche, 'gi');
+        return pokemon.name.fr.match(regex);
+    });
+}
+
+function ListResultat (){
+    const tableauResultat = trouverPokemon(this.value, pokemons);
+    const html = tableauResultat.map(pokemon => {
+        return `
+        <li> ${pokemon.name.fr} </li>
+        `;
+    }).join('');
+    resutat.innerHTML = html;
+}
+
+const input = document.querySelector('input');
+const resutat = document.getElementById("Resultat");
+
+input.addEventListener('change', ListResultat);
+input.addEventListener('keyup', ListResultat);
+
+
+
 //Créer une fontion qui affiche des pokémons de manière aléatoire
-const pokemonArray = ['https://tyradex.vercel.app/api/v1/gen/1']
+/* const pokemonArray = ['https://tyradex.vercel.app/api/v1/gen/1']
     let generation_1 = pokemonArray.filter((pokemon)=> pokemon.generation =='1' )
-    console.log(generation_1)
+    console.log(generation_1) */ 
 
 
 //Fonction qui affiche les pokemons 
@@ -65,4 +98,3 @@ fetch('https://tyradex.vercel.app/api/v1/pokemon')
     .then(element => showPokemonGen(element));
 
 
-////////////// Page des pokemons par type /////////////// 

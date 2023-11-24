@@ -8,7 +8,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src='accueil.js'></script>
+
 </head>
 
 <body>
@@ -21,10 +21,8 @@
                 <a class="menu" href="generation.html">Génération</a>
                 <a class="menu" href="type.html">Type de Pokémon</a>
             </ul>
-            <div class="searchNav">
-                <input type="text" name="rechercher" id="search" />
-                <button class="btn btn-sm">Rechercher</button>
-            </div>
+            
+            <!-- J'ai enlevé le bouton recherche de l'entête pour le mettre dans le corps pour faciliter les recherches-->
 
         </nav>
     </header>
@@ -35,6 +33,9 @@
         <h4> Bon visionnage !</h4>
         <h2> Pokemon aléatoire </h2>
         <section id="randomPoke"> </section>
+        <h2> Rechercher un pokemon </h2>
+        <input type="text" name="rechercher" id="search" placeholder="Rechercher votre Pokemon" />
+        <ul id="Resultat"></ul>
 
         <main>
             <h2> Liste de pokemon </h2>
@@ -47,6 +48,7 @@
     <footer>
         Par Romane & Chloé
     </footer>
+    <script src='accueil.js'></script>
 </body>
 
 </html>
