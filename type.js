@@ -3,12 +3,13 @@ const pokemons = [];
 
 function trouverPokemon(recherche, pokemons) {
     const regex = new RegExp(recherche, 'gi');
-    return pokemons.filter(pokemon => {        
-        return pokemon.types != null && pokemon.types.map(type =>{return type.name}).filter(element =>{
-            
-            console.log(" type de l'objet",element); 
-            console.log("mot clef",recherche);
-            return element.match(regex)}).length>0;
+    return pokemons.filter(pokemon => {
+        return pokemon.types != null && pokemon.types.map(type => { return type.name }).filter(element => {
+
+            console.log(" type de l'objet", element);
+            console.log("mot clef", recherche);
+            return element.match(regex)
+        }).length > 0;
 
     });
 }
