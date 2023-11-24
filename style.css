@@ -7,11 +7,9 @@ header {
   padding: 50px;
   text-align: right;
 }
-
 header img {
   width: 6%;
 }
-
 header a {
   color: #fff;
   margin-left: 30px;
@@ -47,8 +45,6 @@ header a {
 
 main {
   display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 #PokemonDetail {
@@ -57,24 +53,22 @@ main {
   justify-content: center;
   align-items: center;
 }
-
 #PokemonDetail .images {
   width: 20%;
 }
 
 .ListPokemonG {
-  --background: linear-gradient(to left, #333 0%, #cc4c41 100%);
-  width: 190px;
-  height: 254px;
-  padding: 5px;
-  border-radius: 1rem;
-  overflow: visible;
+  --background: linear-gradient(to left, #333 0%, #333 100%);
+  width: 100px;
+  height: 130px;
+  padding: 7px;
+  border-radius: 5%;
   background: #333;
-  background: var(--background);
   position: relative;
   z-index: 1;
-  display: block;
+  display: flex;
   margin: auto;
+  justify-content: space-around;
 }
 
 .carte::after {
@@ -119,6 +113,4 @@ main {
 .carte:hover .carte-info {
   color: #333;
   transition: color 1s;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
