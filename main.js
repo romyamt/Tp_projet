@@ -29,7 +29,7 @@ function showPokemonFiltre(pokemon) {
 }
 
 //filtrer les générations 
-//lsite des générations
+//liste des générations
 function showListGeneration(list) {
     list.forEach(element => {
         showGeneration(element)
@@ -42,7 +42,8 @@ function showGeneration(Generation) {
     let cible = document.getElementById("Generation");
  
     let contenu = `
-    <button class="ChoixGeneration" type="button" onclick="returnGeneration(`+ Generation.generation + `)"> Génération ` + Generation.generation + `</button>
+    <button class="ChoixGeneration" type="button" onclick="returnGeneration(`+ Generation.generation + `)"> 
+    Génération ` + Generation.generation + `</button>
     `;
  
     cible.innerHTML = cible.innerHTML + contenu;
