@@ -2,14 +2,22 @@
 const pokemons = [];
 
 function trouverPokemon(recherche, pokemons) {
-    return pokemons.filter(pokemon => {
-        const regex = new RegExp(recherche, 'gi');
-        return pokemon.types.name.find(types => types.name.match(regex));
+    const regex = new RegExp(recherche, 'gi');
+    return pokemons.filter(pokemon => {        
+        return pokemon.types != null && pokemon.types.map(type =>{return type.name}).filter(element =>{
+            
+            console.log(" type de l'objet",element); 
+            console.log("mot clef",recherche);
+            return element.match(regex)}).length>0;
+
     });
 }
 
+//
+
 function ListResultat() {
     const tableauResultat = trouverPokemon(this.value, pokemons);
+    console.log(tableauResultat);
     const html = tableauResultat.map(pokemon => {
         return `
          <article class="ListPokemonG" onclick="showPokemonDetail ( `+ pokemon.pokedexId + ` )">
