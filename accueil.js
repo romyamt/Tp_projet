@@ -20,7 +20,7 @@ function ListResultat (){
         return `
         <li> ${pokemon.name.fr} </li>
         `;
-    }).join('');
+    })/join('');
     resutat.innerHTML = html;
 }
 
