@@ -49,9 +49,9 @@ function showPokemon(poke) {
         "<img class='img' src='" + poke.sprites.regular + "'>" +
         "<h4 class='nom'>" + poke.name.fr + "</h4>" +
         "</div>"
- 
+
         $(container).append(cart)
-       
+
         for (let i=0; i<$('.cart-pokemons').length; i++) {
             $($('.cart-pokemons')[i]).hide()
         }}

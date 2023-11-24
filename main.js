@@ -30,6 +30,7 @@ function showPokemonFiltre(pokemon) {
 
 //filtrer les générations 
 
+
 //Créer une fonction qui récupère les informations des pokemons
 
 async function showPokemonDetail(pokedexId) {
