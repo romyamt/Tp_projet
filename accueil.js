@@ -1,6 +1,10 @@
 ////////////// Page d'accueil /////////////// 
 
 //rechercher les pokemons par nom
+function showPokemonFiltre(pokemon) {
+    if (pokemon.pokedexId > 0); 
+}
+
 const pokemons = [] ;
 
 function trouverPokemon(recherche, pokemons) {
