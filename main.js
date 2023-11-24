@@ -29,8 +29,14 @@ function showPokemonFiltre(pokemon) {
 }
 
 //filtrer les générations 
-
-
+function filtrerParGeneration() {
+    var select = document.getElementById("ChoixGeneration");
+    var selectedValue = select.options[select.selectedIndex].value;
+    
+    console.log("Génération sélectionnée : " + selectedValue);
+    
+    
+}
 //Créer une fonction qui récupère les informations des pokemons
 
 async function showPokemonDetail(pokedexId) {
