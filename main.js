@@ -36,16 +36,14 @@ fetch('https://tyradex.vercel.app/api/v1/gen')
 function showGenerations(list) {
     let generationSection = document.getElementById("generation");
 
-    // Crée un élément select (menu déroulant)
     let select = document.createElement("select");
     select.addEventListener("change", () => {
-        // Obtient la valeur sélectionnée et appelle la fonction showPokemonList
-        let selectedValue = select.options[select.selectedIndex].value;
+
+    let selectedValue = select.options[select.selectedIndex].value;
         showPokemonList(selectedValue);
     });
 
     list.forEach(generation => {
-        // Crée une option pour chaque génération
         let option = document.createElement("option");
         option.value = generation.generation;
         option.text = "Génération " + generation.generation;
@@ -72,7 +70,7 @@ function displayPokemonList(pokemonList) {
                 <h2>${pokemon.name.fr}</h2>
                 <img src="${pokemon.sprites.regular}" alt="${pokemon.name.fr}"/>
                 <p>${pokemon.types.map(type => {
-                    // Affiche le nom du type et l'image associée
+// Affiche le nom du type et l'image associée
                     return `<img src="${type.image}" alt="${type.name}"/>`;
                 }).join(' ')}</p>
                 <!-- Ajoutez d'autres détails du Pokémon selon vos besoins -->

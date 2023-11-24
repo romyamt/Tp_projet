@@ -1,6 +1,4 @@
-.html {
-    background-color: #333;
-}
+
 
 header {
     display: flex;
@@ -51,34 +49,6 @@ header {
     cursor: pointer;
 }
 
-.ListPokemonG {
-    margin: 20px;
-    list-style: none;
-    display: block;
-    width: 40%;
-    min-height: 40px;
-    border: 1px solid #ffffff;
-    border-radius: 4px;
-    background-color: #333;
-    overflow: hidden;
-    padding-left: 15px;
-    padding-right: 15px;
-    text-align: bottom;
-    color: #fff;
-}
-
-.carte {
-    border-radius: 53px;
-    background: #e0e0e0;
-    box-shadow: 27px 27px 55px #333,
-        -27px -27px 55px #ffffff;
-        width: 100%;
-        padding: 5%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-}
-
 main {
     display: flex;
     justify-content: center;
@@ -90,7 +60,67 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     .images {
         width: 20%;
     }
 }
+
+.ListPokemonG {
+        --background: linear-gradient(to left, #f7ba2b 0%, #ea5358 100%);
+        width: 190px;
+        height: 254px;
+        padding: 5px;
+        border-radius: 1rem;
+        overflow: visible;
+        background: #f7ba2b;
+        background: var(--background);
+        position: relative;
+        z-index: 1;
+        display: block;
+        margin: auto;
+    }
+
+    .carte::after {
+        position: absolute;
+        content: "";
+        top: 30px;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        transform: scale(0.8);
+        filter: blur(25px);
+        background: #f7ba2b;
+        background: var(--background);
+        transition: opacity .5s;
+    }
+
+    .carte-info {
+        --color: #181818;
+        background: var(--color);
+        color: var(--color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+        border-radius: .7rem;
+    }
+
+    .carte.title {
+        font-weight: bold;
+        letter-spacing: .1em;
+    }
+
+    /*Hover*/
+    .carte:hover::after {
+        opacity: 0;
+    }
+
+    .carte:hover .carte-info {
+        color: #f7ba2b;
+        transition: color 1s;
+    }
