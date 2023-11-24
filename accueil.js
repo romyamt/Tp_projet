@@ -40,7 +40,7 @@ let container = $("#poke_container")
 fetch('https://tyradex.vercel.app/api/v1/pokemon')
     .then((response) => response.json())
     .then((pokemons) => showList(pokemons));
- 
+
 function showList(pokemons) {
     pokemons.forEach(e => {
         showPokemon(e)
@@ -53,9 +53,9 @@ function showPokemon(poke) {
         "<img class='img' src='" + poke.sprites.regular + "'>" +
         "<h4 class='nom'>" + poke.name.fr + "</h4>" +
         "</div>"
- 
+
         $(container).append(cart)
-       
+
         for (let i=0; i<$('.cart-pokemons').length; i++) {
             $($('.cart-pokemons')[i]).hide()
         }}
