@@ -7,9 +7,11 @@ header {
   padding: 50px;
   text-align: right;
 }
+
 header img {
   width: 6%;
 }
+
 header a {
   color: #fff;
   margin-left: 30px;
@@ -55,6 +57,7 @@ main {
   justify-content: center;
   align-items: center;
 }
+
 #PokemonDetail .images {
   width: 20%;
 }
@@ -116,4 +119,6 @@ main {
 .carte:hover .carte-info {
   color: #333;
   transition: color 1s;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */

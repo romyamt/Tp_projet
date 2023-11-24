@@ -1,4 +1,4 @@
- ////////////// Page des pokemons par génération ///////////////
+////////////// Page des pokemons par génération ///////////////
 //Fonction qui affiche les pokemons par génération.
 
 //Fonction qui affiche les pokemons 
@@ -21,7 +21,7 @@ function showPokemonFiltre(pokemon) {
         let contenue = `
     <article class="ListPokemonG" onclick="showPokemonDetail ( `+ pokemon.pokedexId + ` )">
     `+ pokemon.name.fr + `
-    <img class='images' src='`+pokemon.sprites.regular+`' width="42px" height="42px">
+    <img class='images' src='`+ pokemon.sprites.regular + `' width="42px" height="42px">
     </article> `;
 
         //ajouter le contenue dans la cible
@@ -40,7 +40,7 @@ function showGenerations(list) {
     let select = document.createElement("select");
     select.addEventListener("change", () => {
 
-    let selectedValue = select.options[select.selectedIndex].value;
+        let selectedValue = select.options[select.selectedIndex].value;
         showPokemonList(selectedValue);
     });
 
@@ -71,9 +71,9 @@ function displayPokemonList(pokemonList) {
                 <h2>${pokemon.name.fr}</h2>
                 <img src="${pokemon.sprites.regular}" alt="${pokemon.name.fr}"/>
                 <p>${pokemon.types.map(type => {
-// Affiche le nom du type et l'image associée
-                    return `<img src="${type.image}" alt="${type.name}"/>`;
-                }).join(' ')}</p>
+            // Affiche le nom du type et l'image associée
+            return `<img src="${type.image}" alt="${type.name}"/>`;
+        }).join(' ')}</p>
                 <!-- Ajoutez d'autres détails du Pokémon selon vos besoins -->
             </article>
         `;
@@ -92,7 +92,7 @@ async function showPokemonDetail(pokedexId) {
     let contenu = `
     <button onclick="goList()"> Revenir à la liste </button>
         <article class="PokemonDetail carte">
-        <img class='images' src='`+pokemon.sprites.regular+`'>
+        <img class='images' src='`+ pokemon.sprites.regular + `'>
         <h2> `+ pokemon.name.fr + ` </h2>
         </article> 
         `;
