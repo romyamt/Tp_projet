@@ -2,25 +2,25 @@
 
 //rechercher les pokemons par nom
 function showPokemonFiltre(pokemon) {
-    if (pokemon.pokedexId > 0); 
+    if (pokemon.pokedexId > 0);
 }
 
-const pokemons = [] ;
+const pokemons = [];
 
 function trouverPokemon(recherche, pokemons) {
     return pokemons.filter(pokemon => {
-        const regex =new RegExp (recherche, 'gi');
+        const regex = new RegExp(recherche, 'gi');
         return pokemon.name.fr.match(regex);
     });
 }
 
-function ListResultat (){
+function ListResultat() {
     const tableauResultat = trouverPokemon(this.value, pokemons);
     const html = tableauResultat.map(pokemon => {
         return `
         <article class="ListPokemonG" onclick="showPokemonDetail ( `+ pokemon.pokedexId + ` )">
         `+ pokemon.name.fr + `
-        <img class='images' src='`+pokemon.sprites.regular+`' width="42px" height="42px">
+        <img class='images' src='`+ pokemon.sprites.regular + `' width="42px" height="42px">
         </article> `;
     }).join('');
     resutat.innerHTML = html;
@@ -35,9 +35,7 @@ input.addEventListener('keyup', ListResultat);
 
 
 //Créer une fontion qui affiche des pokémons de manière aléatoire
-let container = $("#poke_container")
-
-function showList(pokemons) {
+/* function showList(pokemons) {
     pokemons.forEach(e => {
         showPokemon(e)
     });
@@ -54,7 +52,37 @@ function showPokemon(poke) {
 
         for (let i=0; i<$('.cart-pokemons').length; i++) {
             $($('.cart-pokemons')[i]).hide()
-        }}
+        }}"*/
+let container = $("#poke_container");
+
+function showList(pokemons) {
+    let fragment = document.createDocumentFragment();
+
+    pokemons.forEach(poke => {
+        let cart = $("<div>", {
+            class: 'cart-pokemons',
+            html: `<h4 class='nom'>${poke.name.fr}</h4>
+                <img class='img' src='${poke.sprites.regular}'>
+                   <h4 class='nom'>${poke.name.fr}</h4>`
+        });
+        fragment.appendChild(cart[0]);
+    });
+
+    container.append(fragment);
+
+    let randomIndex = Math.floor(Math.random() * pokemons.length);
+    container.children('.cart-pokemons').hide().eq(randomIndex).show();
+}
+
+function showPokemon(poke) {
+    let cart = $("<div>", {
+        class: 'cart-pokemons',
+        html: `<img class='img' src='${poke.sprites.regular}'>
+               <h4 class='nom'>${poke.name.fr}</h4>`
+    });
+
+    container.append(cart);
+}
 
 
 /* 
@@ -97,7 +125,7 @@ async function showPokemonDetail(pokedexId) {
     let contenu = `
     <button onclick="goList()"> Revenir à la liste </button>
         <article class="PokemonDetail carte">
-        <img class='images' src='`+pokemon.sprites.regular+`'>
+        <img class='images' src='`+ pokemon.sprites.regular + `'>
         <h2> `+ pokemon.name.fr + ` </h2>
         </article> 
         `;
@@ -113,9 +141,9 @@ function goList() {
 
 
 // récupérer les données du serveur 
-fetch ('https://tyradex.vercel.app/api/v1/pokemon')
-.then(response => response.json())
-.then (element => pokemons.push(...element))
+fetch('https://tyradex.vercel.app/api/v1/pokemon')
+    .then(response => response.json())
+    .then(element => pokemons.push(...element))
 
 fetch('https://tyradex.vercel.app/api/v1/pokemon')
     .then((response) => response.json())
