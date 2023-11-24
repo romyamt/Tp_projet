@@ -21,6 +21,7 @@ function showPokemonFiltre(pokemon) {
         let contenue = `
     <article class="ListPokemonG" onclick="showPokemonDetail ( `+ pokemon.pokedexId + ` )">
     `+ pokemon.name.fr + `
+    <img src="${pokemon.sprites.regular}" alt="${pokemon.name.fr}"/>
     </article> `;
 
         //ajouter le contenue dans la cible
