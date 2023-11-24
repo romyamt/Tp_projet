@@ -7,11 +7,9 @@ header {
   padding: 50px;
   text-align: right;
 }
-
 header img {
   width: 6%;
 }
-
 header a {
   color: #fff;
   margin-left: 30px;
@@ -55,7 +53,6 @@ main {
   justify-content: center;
   align-items: center;
 }
-
 #PokemonDetail .images {
   width: 20%;
 }
@@ -76,8 +73,13 @@ main {
 
 .carte::after {
   position: absolute;
-  height: 100px;
-  width: 130px;
+  content: "";
+  top: 30px;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
   transform: scale(0.8);
   filter: blur(25px);
   background: #333;
@@ -86,7 +88,7 @@ main {
 }
 
 .carte-info {
-  --color: #333;
+  --color: #cc4c41;
   background: var(--color);
   color: var(--color);
   display: flex;
@@ -98,6 +100,11 @@ main {
   border-radius: 0.7rem;
 }
 
+.carte.title {
+  font-weight: bold;
+  letter-spacing: 0.1em;
+}
+
 /*Hover*/
 .carte:hover::after {
   opacity: 0;
@@ -106,6 +113,4 @@ main {
 .carte:hover .carte-info {
   color: #333;
   transition: color 1s;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
