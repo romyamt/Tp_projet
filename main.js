@@ -1,7 +1,3 @@
-////////////// Page d'accueil /////////////// 
-//Créer une fontion qui affiche des pokémons de manière aléatoire
-
-
  ////////////// Page des pokemons par génération ///////////////
 //Fonction qui affiche les pokemons par génération.
 
