@@ -126,10 +126,14 @@ async function showPokemonDetail(pokedexId) {
     <button onclick="goList()"> Revenir à la liste </button>
         <article class="PokemonDetail carte">
         <img class='images' src='`+ pokemon.sprites.regular + `'>
-        <h2> `+ pokemon.name.fr + ` </h2>
+        <h2> `+ pokemon.name.fr + ` </h2> 
+        <p>${pokemon.types.map(type => {
+            return `<img src="${type.image}" alt="${type.name}"/>`;
+        }).join(' ')}</p>
+        
         </article> 
         `;
-
+        contenu.innerHTML += content
     $("#PokemonDetail").html(contenu);
     $("#Resultat").hide();
     $("#PokemonDetail").show();
