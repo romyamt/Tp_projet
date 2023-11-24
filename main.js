@@ -29,14 +29,43 @@ function showPokemonFiltre(pokemon) {
 }
 
 //filtrer les générations 
-function filtrerParGeneration() {
-    var select = document.getElementById("ChoixGeneration");
-    var selectedValue = select.options[select.selectedIndex].value;
-    
-    console.log("Génération sélectionnée : " + selectedValue);
-    
-    
+//lsite des générations
+function showListGeneration(list) {
+    list.forEach(element => {
+        showGeneration(element)
+    });
 }
+ 
+ 
+//AFFICHAGE DES BUTTONS GÉNÉRATIONS
+function showGeneration(Generation) {
+    let cible = document.getElementById("Generation");
+ 
+    let contenu = `
+    <button class="buttonGeneration" type="button" onclick="returnGeneration(`+ Generation.generation + `)"> Génération ` + Generation.generation + `</button>
+    `;
+ 
+    cible.innerHTML = cible.innerHTML + contenu;
+}
+function returnGeneration(NumberGen) {
+    let cible = document.getElementById("listPokemon");
+        cible.innerHTML = " ";
+ 
+//liste des pokémons par génération
+    function showListPokemon(list) {
+ 
+        list.forEach(element => {
+            showPokemon(element)
+        });
+ 
+    }
+ 
+    //Récupérer données API
+    fetch('https://tyradex.vercel.app/api/v1/gen/' + NumberGen)
+        .then((response) => response.json())
+        .then((listPokemon) => showListPokemon(listPokemon));
+}
+
 //Créer une fonction qui récupère les informations des pokemons
 
 async function showPokemonDetail(pokedexId) {
