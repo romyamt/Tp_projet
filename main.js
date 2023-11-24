@@ -29,42 +29,57 @@ function showPokemonFiltre(pokemon) {
 }
 
 //filtrer les générations 
-//liste des générations
-function showListGeneration(list) {
-    list.forEach(element => {
-        showGeneration(element)
+fetch('https://tyradex.vercel.app/api/v1/gen')
+    .then((response) => response.json())
+    .then((data) => showGenerations(data));
+
+function showGenerations(list) {
+    let generationSection = document.getElementById("generation");
+
+    // Crée un élément select (menu déroulant)
+    let select = document.createElement("select");
+    select.addEventListener("change", () => {
+        // Obtient la valeur sélectionnée et appelle la fonction showPokemonList
+        let selectedValue = select.options[select.selectedIndex].value;
+        showPokemonList(selectedValue);
     });
+
+    list.forEach(generation => {
+        // Crée une option pour chaque génération
+        let option = document.createElement("option");
+        option.value = generation.generation;
+        option.text = "Génération " + generation.generation;
+        select.appendChild(option);
+    });
+
+    // Ajoute le menu déroulant à la section génération
+    generationSection.appendChild(select);
 }
- 
- 
-//Bouton pour les génération
-function showGeneration(Generation) {
-    let cible = document.getElementById("Generation");
- 
-    let contenu = `
-    <button class="ChoixGeneration" type="button" onclick="returnGeneration(`+ Generation.generation + `)"> 
-    Génération ` + Generation.generation + `</button>
-    `;
- 
-    cible.innerHTML = cible.innerHTML + contenu;
-}
-function returnGeneration(NumberGen) {
-    let cible = document.getElementById("listPokemon");
-        cible.innerHTML = " ";
- 
-//liste des pokémons par génération
-    function showListPokemon(list) {
- 
-        list.forEach(element => {
-            showPokemon(element)
-        });
- 
-    }
- 
-    //Récupérer données API
-    fetch('https://tyradex.vercel.app/api/v1/gen/' + NumberGen)
+
+function showPokemonList(generation) {
+    fetch(`https://tyradex.vercel.app/api/v1/gen/${generation}`)
         .then((response) => response.json())
-        .then((listPokemon) => showListPokemon(listPokemon));
+        .then((data) => displayPokemonList(data));
+}
+
+function displayPokemonList(pokemonList) {
+    let listeGenSection = document.getElementById("listeGen");
+    listeGenSection.innerHTML = ""; // Efface le contenu précédent
+
+    pokemonList.forEach(pokemon => {
+        let content = `
+            <article class="Pokemon" onclick="showPokemonDetails(${pokemon.id})">
+                <h2>${pokemon.name.fr}</h2>
+                <img src="${pokemon.sprites.regular}" alt="${pokemon.name.fr}"/>
+                <p>${pokemon.types.map(type => {
+                    // Affiche le nom du type et l'image associée
+                    return `<img src="${type.image}" alt="${type.name}"/>`;
+                }).join(' ')}</p>
+                <!-- Ajoutez d'autres détails du Pokémon selon vos besoins -->
+            </article>
+        `;
+        listeGenSection.innerHTML += content;
+    });
 }
 
 
@@ -100,3 +115,34 @@ fetch('https://tyradex.vercel.app/api/v1/pokemon')
 
 
 ////////////// Page des pokemons par type /////////////// 
+// Les données du Pokémon
+const pokemonData = {
+    "types": [
+        {
+            "name": "Normal",
+            "image": "https://raw.githubusercontent.com/Yarkis01/PokeAPI/images/types/normal.png"
+        }
+    ],
+    // Autres données du Pokémon...
+};
+
+// Fonction pour obtenir les types avec images
+function getTypesWithImages(pokemonData) {
+    const types = pokemonData.types;
+    const typesWithImages = [];
+
+    types.forEach(type => {
+        typesWithImages.push({
+            name: type.name,
+            image: type.image
+        });
+    });
+
+    return typesWithImages;
+}
+
+// Utilisation de la fonction
+const typesWithImages = getTypesWithImages(pokemonData);
+
+// Affichage des résultats dans la console
+console.log("Types du Pokémon : ", typesWithImages);
