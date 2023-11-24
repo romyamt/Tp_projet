@@ -37,10 +37,8 @@ input.addEventListener('keyup', ListResultat);
 //Créer une fontion qui affiche des pokémons de manière aléatoire
 let container = $("#poke_container")
 
-fetch('https://tyradex.vercel.app/api/v1/pokemon')
-    .then((response) => response.json())
-    .then((pokemons) => showList(pokemons));
 
+ 
 function showList(pokemons) {
     pokemons.forEach(e => {
         showPokemon(e)
@@ -121,4 +119,6 @@ fetch ('https://tyradex.vercel.app/api/v1/pokemon')
 .then(response => response.json())
 .then (element => pokemons.push(...element))
 
-
+fetch('https://tyradex.vercel.app/api/v1/pokemon')
+    .then((response) => response.json())
+    .then((pokemons) => showList(pokemons));
