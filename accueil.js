@@ -3,10 +3,6 @@
 //rechercher les pokemons par nom
 const pokemons = [] ;
 
-fetch ('https://tyradex.vercel.app/api/v1/pokemon')
-.then(response => response.json())
-.then (element => pokemons.push(...element))
-
 function trouverPokemon(recherche, pokemons) {
     return pokemons.filter(pokemon => {
         const regex =new RegExp (recherche, 'gi');
@@ -18,8 +14,10 @@ function ListResultat (){
     const tableauResultat = trouverPokemon(this.value, pokemons);
     const html = tableauResultat.map(pokemon => {
         return `
-        <li> ${pokemon.name.fr} </li>
-        `;
+        <article class="ListPokemonG" onclick="showPokemonDetail ( `+ pokemon.pokedexId + ` )">
+        `+ pokemon.name.fr + `
+        <img class='images' src='`+pokemon.sprites.regular+`' width="42px" height="42px">
+        </article> `;
     }).join('');
     resutat.innerHTML = html;
 }
@@ -38,6 +36,7 @@ input.addEventListener('keyup', ListResultat);
     console.log(generation_1) */ 
 
 
+/* 
 //Fonction qui affiche les pokemons 
 function showPokemonGen(list) {
     list.forEach(element => {
@@ -65,7 +64,7 @@ function showPokemonFiltre(pokemon) {
     }
 }
 
-//filtrer les générations 
+//filtrer les générations  */
 
 //Créer une fonction qui récupère les informations des pokemons
 
@@ -83,18 +82,18 @@ async function showPokemonDetail(pokedexId) {
         `;
 
     $("#PokemonDetail").html(contenu);
-    $("#ListPokemonG").hide();
+    $("#Resultat").hide();
     $("#PokemonDetail").show();
 }
 function goList() {
     $("#PokemonDetail").hide();
-    $("#ListPokemonG").show();
+    $("#Resultat").show();
 }
 
 
 // récupérer les données du serveur 
-fetch('https://tyradex.vercel.app/api/v1/pokemon')
-    .then(response => response.json())
-    .then(element => showPokemonGen(element));
+fetch ('https://tyradex.vercel.app/api/v1/pokemon')
+.then(response => response.json())
+.then (element => pokemons.push(...element))
 
 
