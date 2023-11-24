@@ -37,12 +37,12 @@ function showListGeneration(list) {
 }
  
  
-//AFFICHAGE DES BUTTONS GÉNÉRATIONS
+//Bouton pour les génération
 function showGeneration(Generation) {
     let cible = document.getElementById("Generation");
  
     let contenu = `
-    <button class="buttonGeneration" type="button" onclick="returnGeneration(`+ Generation.generation + `)"> Génération ` + Generation.generation + `</button>
+    <button class="ChoixGeneration" type="button" onclick="returnGeneration(`+ Generation.generation + `)"> Génération ` + Generation.generation + `</button>
     `;
  
     cible.innerHTML = cible.innerHTML + contenu;
@@ -65,6 +65,7 @@ function returnGeneration(NumberGen) {
         .then((response) => response.json())
         .then((listPokemon) => showListPokemon(listPokemon));
 }
+
 
 //Créer une fonction qui récupère les informations des pokemons
 
