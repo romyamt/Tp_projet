@@ -37,8 +37,6 @@ input.addEventListener('keyup', ListResultat);
 //Créer une fontion qui affiche des pokémons de manière aléatoire
 let container = $("#poke_container")
 
-
- 
 function showList(pokemons) {
     pokemons.forEach(e => {
         showPokemon(e)
